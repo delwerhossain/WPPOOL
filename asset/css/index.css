@@ -1,0 +1,47 @@
+/* index.css */
+@import './components.css'; /* Ensure this path is correct */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .content-auto {
+    content-visibility: auto;
+  }
+}
+
+
+ /* Global box-sizing reset */
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+
+ /* Styles for the toggle menu */
+ .menu {
+   display: none;
+   position: absolute;
+   top: 100%;
+   right: 0;
+   width: 8rem; /* Adjust the width */
+   height: 12rem; /* Adjust the height */
+   background-color: white;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   z-index: 10;
+   border-radius: 0.5rem;
+ }
+
+ .menu.active {
+   display: block;
+ }
+
+ .menu-item {
+   padding: 1rem;
+   border-bottom: 1px solid #e5e7eb;
+ }
+
+ .menu-item:last-child {
+   border-bottom: none;
+ }
