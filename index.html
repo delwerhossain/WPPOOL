@@ -6,11 +6,27 @@
     <!-- Processed Custom CSS -->
     <link href="./dist/output.css" rel="stylesheet" />
     <style>
-      /* Global box-sizing reset */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
+      body {
+        font-family: myFirstFont;
+        color: #191618;
+      }
+
+      /* Custom scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #bfe4ff;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #1e4bff;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
       }
 
       /* Styles for the toggle menu */
@@ -42,27 +58,38 @@
         top: -48px;
         right: 0;
       }
-
-      .bg-home {
-        background-image: url("./asset/images/home_bg-removebg.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        width: 100%;
-        height: 450px;
-      }
-
-      .rectangle-border {
-        width: 250px;
-        height: 500px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(30deg);
-        border: 1px solid rgb(255, 255, 255);
-        opacity: 1; /* Adjust opacity as needed */
-      }
     </style>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Percentage", "WPPOOL", "Google", "Microsoft", "Twitter Index"],
+          ["2013", 2000, 1020, 800, 400],
+          ["2014", 2170, 1520, 1170, 460],
+          ["2015", 1060, 920, 660, 1120],
+          ["2016", 2030, 1020, 750, 540],
+          ["2017", 930, 920, 630, 640],
+          ["2018", 2330, 1520, 1130, 450],
+        ]);
+
+        var options = {
+          title: "Company Performance",
+          hAxis: { title: "Year", titleTextStyle: { color: "#333" } },
+          vAxis: { minValue: 0 },
+        };
+
+        var chart = new google.visualization.AreaChart(
+          document.getElementById("chart_div")
+        );
+        chart.draw(data, options);
+      }
+    </script>
   </head>
   <body class="relative p-3">
     <header
@@ -85,55 +112,202 @@
           src="./asset/images/icon/menu.svg"
           alt="Menu Icon"
         />
-        <div class="div_relative">
-          <div
+        <nav class="div_relative">
+          <ul
             id="menu"
             class="menu rounded-xl div_absolute mt-2 w-96 h-auto pt-20 bg-white shadow-lg z-10"
           >
-            <div class="menu-item p-4 border-b">Item 1 Item 1 Item 1Item 1</div>
-            <div class="menu-item p-4 border-b">Item 2</div>
-            <div class="menu-item p-4 border-b">Item 3</div>
-          </div>
-        </div>
+            <li class="menu-item p-4 border-b">Item 1 Item 1 Item 1Item 1</li>
+            <li class="menu-item p-4 border-b">Item 2</li>
+            <li class="menu-item p-4 border-b">Item 3</li>
+          </ul>
+        </nav>
       </div>
     </header>
     <section class="text-white bg-primary py-20 rounded-b-xl">
       <div class="grid grid-cols-12 rounded-b-xl justify-center items-center">
         <div class="col-span-3 grid gap-8 pl-24 pt-20 pb-14">
           <div>
-            <h6 class="text-4xl">60</h6>
-            <p class="">companies</p>
+            <h2 class="text-5xl">60</h2>
+            <p>companies</p>
           </div>
           <div>
-            <h6 class="text-4xl">$100B</h6>
-            <p class="">Market cap</p>
+            <h2 class="text-5xl">$100B</h2>
+            <p>Market cap</p>
           </div>
           <div>
-            <h6 class="text-4xl">3.5x</h6>
-            <p class="">Revenue multiple</p>
+            <h2 class="text-5xl">3.5x</h2>
+            <p>Revenue multiple</p>
           </div>
           <div>
-            <h6 class="text-4xl">60%</h6>
-            <p class="">LTM avg. revenue growth rate</p>
+            <h2 class="text-5xl">60%</h2>
+            <p>LTM avg. revenue growth rate</p>
           </div>
         </div>
-        <div class="col-span-6 text-center bg-home z-20 w-full h-[450px]">
-          <div class="rectangle-border"></div>
-          <div class="z-30 mt-28">
-            <h1 class="text-7xl ">The WPPOOL Index</h1>
+        <div
+          class="col-span-7 text-center bg-home z-20 w-full h-[450px] relative"
+        >
+          <div
+            class="w-48 h-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 skew-x-[-20deg] border border-white opacity-100"
+          ></div>
+          <div class="z-30 mt-28 relative">
+            <h1 class="text-7xl">The WPPOOL Index</h1>
             <p class="text-lg">
               Monitor the performance of emerging, publicly traded, financial
               technology companies
             </p>
           </div>
         </div>
-        <div class="col-span-3">
-          <button class="z-20 bg-white shadow-lg up-scroll rounded-full absolute bottom-10 right-10">
-           <img class=" p-3 "  src="./asset/images/icon/down-arrow.svg" alt="">
+        <div class="col-span-1 relative">
+          <button
+            class="z-20 bg-white shadow-2xl up-scroll rounded-full absolute bottom-10 right-10"
+            aria-label="Scroll Down"
+          >
+            <img
+              class="p-4"
+              src="./asset/images/icon/down-arrow.svg"
+              alt="Down Arrow"
+            />
           </button>
         </div>
       </div>
     </section>
+
+    <!-- Dashboard Section -->
+    <section class="mt-10 flex gap-3 h-[90vh]">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 bg-gray-100 text-gray-700 p-4 flex flex-col rounded-xl"
+      >
+        <nav class="flex-1">
+          <ul class="space-y-4">
+            <li>
+              <a
+                href="#"
+                class="dashboard-active flex justify-between py-2 px-4 rounded hover:bg-gray-700 hover:text-white"
+                >Dashboard <span>-</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex justify-between py-2 px-4 rounded hover:bg-gray-700 hover:text-white"
+                >Profile <span>+</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex justify-between py-2 px-4 rounded hover:bg-gray-700 hover:text-white"
+                >Settings <span>+</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex justify-between py-2 px-4 rounded hover:bg-gray-700 hover:text-white"
+                >Notifications <span>+</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex justify-between py-2 px-4 rounded hover:bg-gray-700 hover:text-white"
+                >Logout <span>+</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 p-6 mr-20 overflow-y-auto">
+        <header class="flex items-center mb-4 justify-between">
+          <div class="flex justify-center items-center">
+            <div
+              class="w-5 h-10 transform skew-x-[-20deg] border border-black mx-2"
+            ></div>
+            <h2 class="text-4xl">The WPPOOL Index</h2>
+          </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="bg-gray-200 flex justify-between items-center mx-2 rounded-lg p-8 shadow"
+          >
+            <h2 class="text-4xl text-orange-600 font-semibold">+66.2%</h2>
+            <p class="pr-2 border-r-4 border-orange-600">
+              WPPOOL <br />
+              Index
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="bg-gray-200 flex justify-between items-center mx-2 rounded-lg p-8 shadow"
+          >
+            <h2 class="text-4xl text-blue-600 font-semibold">+66.2%</h2>
+            <p class="pr-2 border-r-4 border-blue-600">
+              WPPOOL <br />
+              Index
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="bg-gray-200 flex justify-between items-center mx-2 rounded-lg p-8 shadow"
+          >
+            <h2 class="text-4xl text-green-600 font-semibold">+66.2%</h2>
+            <p class="pr-2 border-r-4 border-green-600">
+              WPPOOL <br />
+              Index
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="bg-gray-200 flex justify-between items-center mx-2 rounded-lg p-8 shadow"
+          >
+            <h2 class="text-4xl text-purple-600 font-semibold">+66.2%</h2>
+            <p class="pr-2 border-r-4 border-purple-600">
+              WPPOOL <br />
+              Index
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-4 ml-2">
+          <div class="flex justify-around gap-4 items-center">
+            <!--  -->
+            <div
+              class="bg-primary w-[300px] h-[30px] rounded-2xl text-white flex justify-between items-center px-2"
+            >
+              <p>sector</p>
+              <img src="./asset/images/icon/down-arrow-fill.svg" alt="" />
+            </div>
+
+            <!--  -->
+            <div
+              class="bg-primary w-[300px] h-[30px] rounded-2xl text-white flex justify-between items-center px-2"
+            >
+              <p>sector</p>
+              <img src="./asset/images/icon/down-arrow-fill.svg" alt="" />
+            </div>
+          </div>
+          <div>
+            <!--  -->
+            <div
+              class="bg-[#EFF3F6] text-[#748DA1] w-[350px] h-[30px] rounded-2xl flex justify-around items-center px-10"
+            >
+              <p>1Y</p>
+              <p>YTD</p>
+              <p class="time-active">6M</p>
+              <p>1M</p>
+              <p>1W</p>
+            </div>
+          </div>
+        </div>
+        <div id="chart_div" style="width: 100%; height: 500px"></div>
+      </div>
+    </section>
+
     <script>
       document
         .getElementById("menu-icon")
