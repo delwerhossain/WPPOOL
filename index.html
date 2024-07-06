@@ -1,80 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WPPOOL - Project</title>
-  <link href="./dist/output.css" rel="stylesheet">
-  <style>
-    /* Add custom animations */
-    @keyframes slideIn {
-      from { transform: translateX(100%); }
-      to { transform: translateX(0); }
-    }
-    @keyframes slideOut {
-      from { transform: translateX(0); }
-      to { transform: translateX(100%); }
-    }
-    .menu-open {
-      animation: slideIn 0.3s ease-out forwards;
-    }
-    .menu-close {
-      animation: slideOut 0.3s ease-out forwards;
-    }
-  </style>
-</head>
-<body class="p-3">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Processed Custom CSS -->
+    <link href="./dist/output.css" rel="stylesheet" />
+    <style>
+      /* Global box-sizing reset */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
-<header class="bg-primary px-10 py-5 flex justify-between items-center">
-  <a href="/"> 
-    <img src="./asset/images/logo.svg" alt="Logo" class="h-8"/>
-  </a>
-  <div class="flex items-center gap-4">
-    <img id="share-icon" class="w-6 h-6 p-1 cursor-pointer" src="./asset/images/icon/share.svg" alt="Share Icon"/>
-    <button class="btn bg-blue-500 text-white py-2 px-4 rounded">Download the 2024 Report</button>
-    <img id="menu-icon" class="w-6 h-6 cursor-pointer" src="./asset/images/icon/menu.svg" alt="Menu Icon"/>
-  </div>
-</header>
+      /* Styles for the toggle menu */
+      .menu {
+        display: none;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        opacity: 0;
+        transform: translateY(-10px);
+        top: 100%;
+        right: 0;
+      }
 
-<div id="menu" class="fixed top-0 right-0 w-3/4 md:w-1/2 lg:w-1/3 bg-white h-full shadow-lg transform translate-x-full transition-transform duration-300 ease-out z-50">
-  <div class="p-4 flex justify-between items-center border-b">
-    <h2 class="text-xl font-bold">Menu</h2>
-    <img id="menu-close-icon" class="w-6 h-6 cursor-pointer" src="./asset/images/icon/close.svg" alt="Close Icon"/>
-  </div>
-  <ul class="p-4 space-y-4">
-    <li><a href="#" class="text-blue-700">The WPPOOL Index</a></li>
-    <li><a href="#" class="text-blue-700">All Companies</a></li>
-    <li><a href="#" class="text-blue-700">Potential Future Listings</a></li>
-    <li><a href="#" class="text-blue-700">State of USA</a></li>
-    <li><a href="#" class="text-blue-700">Stories & Ideas</a></li>
-    <li><a href="#" class="text-blue-700">About WPPOOL</a></li>
-    <li><a href="#" class="text-blue-700">WPPOOL Portfolio Companies</a></li>
-    <li><a href="#" class="text-blue-700">Visit WPPOOL</a></li>
-  </ul>
-</div>
+      .menu.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-<script>
-  // JavaScript to handle menu open/close
-  const menu = document.getElementById('menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const menuCloseIcon = document.getElementById('menu-close-icon');
-  const shareIcon = document.getElementById('share-icon');
+      .div_relative {
+        position: relative;
+      }
 
-  menuIcon.addEventListener('click', () => {
-    menu.classList.remove('translate-x-full');
-    menu.classList.add('menu-open');
-    shareIcon.classList.add('bg-[#AFCD80]'); // Set background color of share icon
-  });
+      .div_absolute {
+        position: absolute;
+        top: -48px;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body class="relative p-3">
+    <header
+      class="bg-primary rounded-t-xl pl-10 pr-1  py-5 flex justify-between items-center relative"
+    >
+      <a href="/">
+        <img src="./asset/images/logo.svg" alt="Logo" class="w-auto" />
+      </a>
+      <div class="flex items-center justify-evenly gap-4 relative">
+        <img
+          id="share-icon"
+          class="z-20 btn p-3 hover:bg-green-300 cursor-pointer"
+          src="./asset/images/icon/share.svg"
+          alt="Share Icon"
+        />
+        <button class="btn btn-primary z-20">Download the 2024 Report</button>
+        <img
+        id="menu-icon"
+        class="z-50 p-2 hover:outline hover:outline-white cursor-pointer transition-transform duration-300"
+        src="./asset/images/icon/menu.svg"
+        alt="Menu Icon"
+      />
+        <div class="div_relative">
+        
+          <div
+            id="menu"
+            class="menu rounded-xl div_absolute mt-2 w-96  h-auto pt-20 bg-white shadow-lg  z-10"
+          >
+            <div class="menu-item p-4 border-b">Item 1 Item 1 Item 1Item 1</div>
+            <div class="menu-item p-4 border-b">Item 2</div>
+            <div class="menu-item p-4 border-b">Item 3</div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-  menuCloseIcon.addEventListener('click', () => {
-    menu.classList.remove('menu-open');
-    menu.classList.add('menu-close');
-    setTimeout(() => {
-      menu.classList.add('translate-x-full');
-      menu.classList.remove('menu-close');
-    }, 300);
-  });
-</script>
+    <script>
+      document
+        .getElementById("menu-icon")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("menu");
+          const shareIcon = document.getElementById("share-icon");
+          const menuIcon = this;
 
-</body>
+          menu.classList.toggle("active");
+
+          // Toggle icon change
+          const iconSrc = menu.classList.contains("active")
+            ? "./asset/images/icon/close.svg"
+            : "./asset/images/icon/menu.svg";
+          menuIcon.src = iconSrc;
+
+          // Change background color of share icon
+          shareIcon.classList.toggle("bg-[#AFCD80]");
+        });
+    </script>
+  </body>
 </html>
