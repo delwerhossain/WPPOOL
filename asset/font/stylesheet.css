@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Nantes';
+    src: url('Nantes-Bold.eot');
+    src: local('Nantes Bold'), local('Nantes-Bold'),
+        url('Nantes-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Nantes-Bold.woff2') format('woff2'),
+        url('Nantes-Bold.woff') format('woff'),
+        url('Nantes-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nantes';
+    src: url('Nantes-Light.eot');
+    src: local('Nantes Light'), local('Nantes-Light'),
+        url('Nantes-Light.eot?#iefix') format('embedded-opentype'),
+        url('Nantes-Light.woff2') format('woff2'),
+        url('Nantes-Light.woff') format('woff'),
+        url('Nantes-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nantes';
+    src: url('Nantes-LightItalic.eot');
+    src: local('Nantes Light Italic'), local('Nantes-LightItalic'),
+        url('Nantes-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Nantes-LightItalic.woff2') format('woff2'),
+        url('Nantes-LightItalic.woff') format('woff'),
+        url('Nantes-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Nantes';
+    src: url('Nantes-Regular.eot');
+    src: local('Nantes Regular'), local('Nantes-Regular'),
+        url('Nantes-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Nantes-Regular.woff2') format('woff2'),
+        url('Nantes-Regular.woff') format('woff'),
+        url('Nantes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nantes';
+    src: url('Nantes-BoldItalic.eot');
+    src: local('Nantes Bold Italic'), local('Nantes-BoldItalic'),
+        url('Nantes-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Nantes-BoldItalic.woff2') format('woff2'),
+        url('Nantes-BoldItalic.woff') format('woff'),
+        url('Nantes-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Nantes';
+    src: url('Nantes-RegularItalic.eot');
+    src: local('Nantes Regular Italic'), local('Nantes-RegularItalic'),
+        url('Nantes-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Nantes-RegularItalic.woff2') format('woff2'),
+        url('Nantes-RegularItalic.woff') format('woff'),
+        url('Nantes-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+

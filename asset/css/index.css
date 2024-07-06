@@ -1,5 +1,5 @@
 /* index.css */
-@import './components.css'; /* Ensure this path is correct */
+@import "./components.css"; /* Ensure this path is correct */
 
 @tailwind base;
 @tailwind components;
@@ -11,36 +11,44 @@
   }
 }
 
+@font-face {
+  font-family: Nantes-Regular;
+  src: url("./asset/font/Nantes-Regular.woff");
+}
 
- /* Global box-sizing reset */
- *,
- *::before,
- *::after {
-   box-sizing: border-box;
- }
+body {
+  font-family: myFirstFont;
+}
 
- /* Styles for the toggle menu */
- .menu {
-   display: none;
-   position: absolute;
-   top: 100%;
-   right: 0;
-   /* width: 24rem;  */
-   height: auto; /* Adjust the height */
-   background-color: white;
-   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-   z-index: 10;
- }
+/* Global box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
- .menu.active {
-   display: block;
- }
+/* Styles for the toggle menu */
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  /* width: 24rem;  */
+  height: auto; /* Adjust the height */
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
 
- .menu-item {
-   padding: 1rem;
-   border-bottom: 1px solid #e5e7eb;
- }
+.menu.active {
+  display: block;
+}
 
- .menu-item:last-child {
-   border-bottom: none;
- }
+.menu-item {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
