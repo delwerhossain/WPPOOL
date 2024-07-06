@@ -1,99 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Processed Custom CSS -->
-    <link href="./dist/output.css" rel="stylesheet" />
-    <style>
-      /* Global box-sizing reset */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Processed Custom CSS -->
+  <link href="./dist/output.css" rel="stylesheet" />
+  <style>
+    /* Global box-sizing reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-      /* Styles for the toggle menu */
-      .menu {
-        display: none;
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        opacity: 0;
-        transform: translateY(-10px);
-        top: 100%;
-        right: 0;
-      }
+    /* Styles for the toggle menu */
+    .menu {
+      display: none;
+      transition: opacity 0.3s ease-in-out, transform 0.9s ease-in-out, height 0.9s ease-in-out;
+      opacity: 0;
+      transform: translateY(-10px);
+      top: 100%;
+      right: 0;
+      height: 0;
+      overflow: hidden;
+    }
 
-      .menu.active {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .menu.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      height: auto;
+    }
 
-      .div_relative {
-        position: relative;
-      }
+    .div_relative {
+      position: relative;
+    }
 
-      .div_absolute {
-        position: absolute;
-        top: -48px;
-        right: 0;
-      }
-    </style>
-  </head>
-  <body class="relative p-3">
-    <header
-      class="bg-primary rounded-t-xl pl-10 pr-1  py-5 flex justify-between items-center relative"
-    >
-      <a href="/">
-        <img src="./asset/images/logo.svg" alt="Logo" class="w-auto" />
-      </a>
-      <div class="flex items-center justify-evenly gap-4 relative">
-        <img
-          id="share-icon"
-          class="z-20 btn p-3 hover:bg-green-300 cursor-pointer"
-          src="./asset/images/icon/share.svg"
-          alt="Share Icon"
-        />
-        <button class="btn btn-primary z-20">Download the 2024 Report</button>
-        <img
-        id="menu-icon"
-        class="z-50 p-2 hover:outline hover:outline-white cursor-pointer transition-transform duration-300"
-        src="./asset/images/icon/menu.svg"
-        alt="Menu Icon"
-      />
-        <div class="div_relative">
-        
-          <div
-            id="menu"
-            class="menu rounded-xl div_absolute mt-2 w-96  h-auto pt-20 bg-white shadow-lg  z-10"
-          >
-            <div class="menu-item p-4 border-b">Item 1 Item 1 Item 1Item 1</div>
-            <div class="menu-item p-4 border-b">Item 2</div>
-            <div class="menu-item p-4 border-b">Item 3</div>
-          </div>
+    .div_absolute {
+      position: absolute;
+      top: -48px;
+      right: 0;
+    }
+  </style>
+</head>
+<body class="relative p-3">
+  <header class="bg-primary rounded-t-xl pl-10 pr-1 py-5 flex justify-between items-center relative">
+    <a href="/">
+      <img src="./asset/images/logo.svg" alt="Logo" class="w-auto" />
+    </a>
+    <div class="flex items-center justify-evenly gap-4 relative">
+      <img id="share-icon" class="z-20 btn p-3 hover:bg-green-300 cursor-pointer" src="./asset/images/icon/share.svg" alt="Share Icon" />
+      <button class="btn btn-primary z-20">Download the 2024 Report</button>
+      <img id="menu-icon" class="z-50 p-2 hover:outline hover:outline-white cursor-pointer transition-transform duration-300" src="./asset/images/icon/menu.svg" alt="Menu Icon" />
+      <div class="div_relative">
+        <div id="menu" class="menu rounded-xl div_absolute mt-2 w-96 h-auto pt-20 bg-white shadow-lg z-10">
+          <div class="menu-item p-4 border-b">Item 1 Item 1 Item 1Item 1</div>
+          <div class="menu-item p-4 border-b">Item 2</div>
+          <div class="menu-item p-4 border-b">Item 3</div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <script>
-      document
-        .getElementById("menu-icon")
-        .addEventListener("click", function () {
-          const menu = document.getElementById("menu");
-          const shareIcon = document.getElementById("share-icon");
-          const menuIcon = this;
+  <script>
+    document.getElementById("menu-icon").addEventListener("click", function () {
+      const menu = document.getElementById("menu");
+      const shareIcon = document.getElementById("share-icon");
+      const menuIcon = this;
 
-          menu.classList.toggle("active");
+      menu.classList.toggle("active");
 
-          // Toggle icon change
-          const iconSrc = menu.classList.contains("active")
-            ? "./asset/images/icon/close.svg"
-            : "./asset/images/icon/menu.svg";
-          menuIcon.src = iconSrc;
+      // Toggle icon change
+      const iconSrc = menu.classList.contains("active")
+        ? "./asset/images/icon/close.svg"
+        : "./asset/images/icon/menu.svg";
+      menuIcon.src = iconSrc;
 
-          // Change background color of share icon
-          shareIcon.classList.toggle("bg-[#AFCD80]");
-        });
-    </script>
-  </body>
+      // Change background color of share icon
+      shareIcon.classList.toggle("bg-[#AFCD80]");
+
+      // Handle height animation
+      if (menu.classList.contains("active")) {
+        menu.style.height = `${menu.scrollHeight}px`;
+      } else {
+        menu.style.height = "0";
+      }
+    });
+  </script>
+</body>
 </html>
