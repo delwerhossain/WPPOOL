@@ -9,6 +9,7 @@
       body {
         font-family: myFirstFont;
         color: #191618;
+        background: #ebebeb;
       }
 
       /* Custom scrollbar styling */
@@ -131,7 +132,7 @@
       }
     </script>
   </head>
-  <body class="relative p-3">
+  <body class="relative p-4">
     <header
       class="bg-primary rounded-t-xl pl-10 pr-1 py-5 flex justify-between items-center relative"
     >
@@ -164,7 +165,7 @@
         </nav>
       </div>
     </header>
-    <section class="text-white bg-primary py-20 rounded-b-xl">
+    <section class="text-white bg-primary py-10 rounded-b-xl">
       <div class="grid grid-cols-12 rounded-b-xl justify-center items-center">
         <div class="col-span-3 grid gap-8 pl-24 pt-20 pb-14">
           <div>
@@ -214,7 +215,7 @@
     </section>
 
     <!-- Dashboard Section -->
-    <section class="mt-10 flex gap-3">
+    <section class="mt-10 bg-white p-5 rounded-xl flex gap-3">
       <!-- Sidebar -->
       <aside
         class="w-64 bg-gray-100 text-gray-700 p-4 flex flex-col rounded-xl"
@@ -348,17 +349,27 @@
       </div>
     </section>
 
-    <section class="p-20 mt-10">
-      <div class="flex justify-between items-center px-3 mb-6">
-        <h2 class="text-3xl col-span-2">All Companies</h2>
-        <input
-          type="text"
-          placeholder="Search..."
-          class="col-span-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-        />
+    <section class="p-20 bg-white rounded-xl mt-10">
+      <div class="flex justify-between items-center px-4 mb-10">
+        <h2 class="text-5xl col-span-2">All Companies</h2>
+        <div class="relative col-span-2 w-[550px] h-16">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <img
+              src="./asset/images/icon/search.svg"
+              alt="Search Icon"
+              class="w-6 h-6"
+            />
+          </span>
+          <input
+            type="text"
+            placeholder="Search Companies"
+            class="p-2 pl-12 border w-full h-full bg-[#F3F3F3] border-[#DADADA] rounded-md focus:outline-none placeholder:text-black focus:border-blue-500"
+          />
+        </div>
       </div>
+
       <div class="overflow-x-auto">
-        <table class="w-full text-left  rounded-lg">
+        <table class="w-full text-left rounded-lg">
           <thead>
             <tr class="">
               <th class="py-3 px-4 text-sm font-semibold">Company</th>
@@ -380,9 +391,9 @@
             </tr>
           </thead>
           <tbody>
-             <!-- Repeat similar rows for more companies -->
-              <!-- ! todo : rounded need   -->
-             <tr class="border-b  bg-[#F3F3F3]">
+            <!-- Repeat similar rows for more companies -->
+            <!-- ! todo : rounded need   -->
+            <tr class="border-b bg-[#F3F3F3]">
               <td class="py-3 px-4 text-sm">Alkami Technology</td>
               <td class="py-3 px-4 text-sm">AFRM</td>
               <td class="py-3 px-4 text-sm">B2B SaaS</td>
@@ -405,12 +416,11 @@
               <td class="py-3 px-4 text-sm">5x</td>
               <td class="py-3 px-4 text-sm">10%</td>
             </tr>
-           
           </tbody>
         </table>
       </div>
     </section>
-    
+
     <script>
       document
         .getElementById("menu-icon")
@@ -432,7 +442,7 @@
 
           // Handle height animation
           if (menu.classList.contains("active")) {
-            menu.style.height = ${menu.scrollHeight}px;
+            menu.style.height = `${menu.scrollHeight}px`;
           } else {
             menu.style.height = "0";
           }
