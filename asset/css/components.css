@@ -5,6 +5,7 @@
 
 .btn {
   @apply text-white p-3 rounded-full border border-white hover:bg-primary-light;
+  font-family: Arial, sans-serif; /* Set your website default font here */
 }
 
 .btn-primary {
@@ -14,9 +15,11 @@
 .btn-secondary {
   @apply bg-secondary;
 }
-.dashboard-active{
+
+.dashboard-active {
   @apply bg-primary text-white shadow-defult;
 }
+
 
 .shadow-defult{
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
