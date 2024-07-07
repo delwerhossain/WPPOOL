@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Processed Custom CSS -->
     <link href="./dist/output.css" rel="stylesheet" />
+    <!-- Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <style>
       body {
         font-family: myFirstFont;
@@ -87,6 +93,14 @@
         opacity: 1;
         margin-right: 10px;
         margin-left: 10px;
+      }
+
+      /* slider */
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 40px;
+        height: 40px;
+        color: black;
       }
     </style>
     <script
@@ -734,7 +748,7 @@
     <section class="m-20">
       <div>
         <h1 class="text-5xl mt-2">Potential Future Listings</h1>
-        <p class="w-3/6 mt-2  leading-6">
+        <p class="w-3/6 mt-2 leading-6">
           Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
           vulputate libero et velit interdum, ac aliquet odio mattis. Class
           aptent taciti sociosqu ad litora torquent per conubia nostra, per
@@ -794,6 +808,105 @@
         />
       </div>
     </section>
+    <!-- State of USA -->
+    <section class="m-20">
+      <h1 class="text-4xl mb-3">State of USA</h1>
+      <button
+        class="btn btn-primary text-4xl flex items-center justify-between py-1 px-4 gap-2 w-44"
+      >
+        2024 <img src="./asset/images/icon/down-arrow-fill.svg" alt="" />
+      </button>
+      <p class="w-3/6 mt-2 leading-6">
+        Click through the slides or download the report to view natively on your
+        device.
+      </p>
+
+      <div class="mt-10 flex items-center justify-center relative">
+        <!-- Swiper -->
+        <div class="swiper mySwiper w-4/5">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide bg-white p-6 rounded-lg">
+              <img
+                src="./asset/images/slider/1.png"
+                alt="Slide 1"
+                class="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-lg">
+              <img
+                src="./asset/images/slider/2.png"
+                alt="Slide 2"
+                class="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-lg">
+              <img
+                src="./asset/images/slider/3.png"
+                alt="Slide 3"
+                class="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-lg">
+              <img
+                src="./asset/images/slider/1.png"
+                alt="Slide 1"
+                class="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-lg">
+              <img
+                src="./asset/images/slider/2.png"
+                alt="Slide 2"
+                class="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-lg">
+              <img
+                src="./asset/images/slider/3.png"
+                alt="Slide 3"
+                class="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+        <!-- Navigation buttons -->
+        <div class="flex bg-red-700 justify-center mt-4">
+          <div class="  ">
+            <div
+              class="swiper-button-next p-10 bg-white rounded-full shadow-md mx-2"
+            ></div>
+            <div
+              class="swiper-button-prev p-10 bg-white rounded-full shadow-md mx-2"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- !pagination todo -->
+      <div>
+
+      </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
     <script>
       document
         .getElementById("menu-icon")
