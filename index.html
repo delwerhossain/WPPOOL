@@ -17,11 +17,11 @@
       }
 
       ::-webkit-scrollbar-track {
-        background: #bfe4ff;
+        background: #d9edfc;
       }
 
       ::-webkit-scrollbar-thumb {
-        background: #1e4bff;
+        background: #2042b6;
         border-radius: 4px;
       }
 
@@ -58,6 +58,35 @@
         top: -48px;
         right: 0;
       }
+
+      .bg-home {
+        background-image: url("./asset/images/home_bg-removebg.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 100%;
+        height: 450px;
+      }
+
+      .parallelogram-border {
+        width: 200px;
+        height: 550px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%) skewX(-20deg);
+        border: 1px solid rgba(255, 255, 255, 1);
+        opacity: 1;
+      }
+      .parallelogram-border-dashboard {
+        width: 20px;
+        height: 50px;
+        transform: translate(-50%, -50%) skewX(-20deg);
+        border: 1px solid rgb(3, 0, 0);
+        opacity: 1;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
     </style>
     <script
       type="text/javascript"
@@ -69,19 +98,30 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ["Percentage", "WPPOOL", "Google", "Microsoft", "Twitter Index"],
-          ["2013", 2000, 1020, 800, 400],
-          ["2014", 2170, 1520, 1170, 460],
-          ["2015", 1060, 920, 660, 1120],
-          ["2016", 2030, 1020, 750, 540],
-          ["2017", 930, 920, 630, 640],
-          ["2018", 2330, 1520, 1130, 450],
+          ["Year", "WPPOOL", "Google", "Microsoft", "Twitter Index"],
+          ["2013", 100, 90, 80, 70],
+          ["2014", 130, 95, 75, 60],
+          ["2015", 150, 100, 85, 65],
+          ["2016", 180, 110, 95, 70],
+          ["2017", 170, 105, 90, 75],
+          ["2018", 210, 115, 100, 80],
+          ["2019", 230, 120, 110, 85],
+          ["2020", 250, 125, 115, 90],
+          ["2021", 270, 130, 120, 95],
+          ["2022", 290, 135, 125, 100],
+          ["2023", 310, 140, 130, 105],
+          ["2024", 350, 145, 135, 110],
         ]);
 
         var options = {
-          title: "Company Performance",
+          title: "Company Growth Percentage",
           hAxis: { title: "Year", titleTextStyle: { color: "#333" } },
-          vAxis: { minValue: 0 },
+          vAxis: { minValue: 0, title: "Growth Percentage" },
+          colors: ["#ff9900", "#3366cc", "#dc3912", "#109618"],
+          areaOpacity: 0.2,
+          pointSize: 5,
+          lineWidth: 3,
+          legend: { position: "bottom" },
         };
 
         var chart = new google.visualization.AreaChart(
@@ -145,12 +185,12 @@
           </div>
         </div>
         <div
-          class="col-span-7 text-center bg-home z-20 w-full h-[450px] relative"
+          class="col-span-7 flex flex-col justify-center items-center bg-home z-20 w-full h-[450px] relative"
         >
           <div
             class="w-48 h-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 skew-x-[-20deg] border border-white opacity-100"
           ></div>
-          <div class="z-30 mt-28 relative">
+          <div class="z-30 relative text-center">
             <h1 class="text-7xl">The WPPOOL Index</h1>
             <p class="text-lg">
               Monitor the performance of emerging, publicly traded, financial
@@ -174,7 +214,7 @@
     </section>
 
     <!-- Dashboard Section -->
-    <section class="mt-10 flex gap-3 h-[90vh]">
+    <section class="mt-10 flex gap-3">
       <!-- Sidebar -->
       <aside
         class="w-64 bg-gray-100 text-gray-700 p-4 flex flex-col rounded-xl"
@@ -221,7 +261,7 @@
       </aside>
 
       <!-- Main Content -->
-      <div class="flex-1 p-6 mr-20 overflow-y-auto">
+      <div class="flex-1 p-6 mr-20">
         <header class="flex items-center mb-4 justify-between">
           <div class="flex justify-center items-center">
             <div
@@ -304,7 +344,57 @@
             </div>
           </div>
         </div>
-        <div id="chart_div" style="width: 100%; height: 500px"></div>
+        <div id="chart_div" style="width: 100%; height: 700px"></div>
+      </div>
+    </section>
+
+    <section class="p-20 bg-slate-400">
+      <div class="flex justify-between items-center px-3 mb-6">
+        <h2 class="text-3xl col-span-2">Company List</h2>
+        <input
+          type="text"
+          placeholder="Search..."
+          class="col-span-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+        />
+      </div>
+      <div class="">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="py-3 px-4 text-sm font-semibold">Company</th>
+              <th class="py-3 px-4 text-sm font-semibold">
+                Ticker
+                <img
+                  src="./asset/images/icon/down-arrow-fill.svg"
+                  alt="Sort Icon"
+                  class="inline w-4 h-4"
+                />
+              </th>
+              <th class="py-3 px-4 text-sm font-semibold">Vertical</th>
+              <th class="py-3 px-4 text-sm font-semibold">Price</th>
+              <th class="py-3 px-4 text-sm font-semibold">Market Cap ($B)</th>
+              <th class="py-3 px-4 text-sm font-semibold">Revenue Growth</th>
+              <th class="py-3 px-4 text-sm font-semibold">Gross Margin</th>
+              <th class="py-3 px-4 text-sm font-semibold">EV/Revenue</th>
+              <th class="py-3 px-4 text-sm font-semibold">YTD Performance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example row, replicate as necessary -->
+            <tr class="border-b">
+              <td class="py-3 px-4 text-sm">Company Name</td>
+              <td class="py-3 px-4 text-sm">TICKER</td>
+              <td class="py-3 px-4 text-sm">Vertical</td>
+              <td class="py-3 px-4 text-sm">$100</td>
+              <td class="py-3 px-4 text-sm">$10B</td>
+              <td class="py-3 px-4 text-sm">20%</td>
+              <td class="py-3 px-4 text-sm">50%</td>
+              <td class="py-3 px-4 text-sm">5x</td>
+              <td class="py-3 px-4 text-sm">10%</td>
+            </tr>
+            <!-- Repeat similar rows for more companies -->
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -329,7 +419,7 @@
 
           // Handle height animation
           if (menu.classList.contains("active")) {
-            menu.style.height = `${menu.scrollHeight}px`;
+            menu.style.height = ${menu.scrollHeight}px;
           } else {
             menu.style.height = "0";
           }
