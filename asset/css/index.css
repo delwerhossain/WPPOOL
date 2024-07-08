@@ -18,8 +18,9 @@
 
 body {
   font-family: myFirstFont;
-  color:  #191618;
+  color: #191618;
 }
+
 
 /* Global box-sizing reset */
 *,
