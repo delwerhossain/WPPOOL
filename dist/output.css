@@ -729,20 +729,20 @@ video {
   margin-bottom: 0.25rem;
 }
 
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+
 .mb-4{
   margin-bottom: 1rem;
 }
 
+.mb-6{
+  margin-bottom: 1.5rem;
+}
+
 .ml-1{
   margin-left: 0.25rem;
-}
-
-.ml-2{
-  margin-left: 0.5rem;
-}
-
-.mr-20{
-  margin-right: 5rem;
 }
 
 .mt-10{
@@ -767,14 +767,6 @@ video {
 
 .mt-8{
   margin-top: 2rem;
-}
-
-.mb-2{
-  margin-bottom: 0.5rem;
-}
-
-.mb-6{
-  margin-bottom: 1.5rem;
 }
 
 .block{
@@ -853,6 +845,14 @@ video {
   width: 33.333333%;
 }
 
+.w-10\/12{
+  width: 83.333333%;
+}
+
+.w-11\/12{
+  width: 91.666667%;
+}
+
 .w-2{
   width: 0.5rem;
 }
@@ -873,10 +873,6 @@ video {
   width: 1.5rem;
 }
 
-.w-64{
-  width: 16rem;
-}
-
 .w-8\/12{
   width: 66.666667%;
 }
@@ -889,36 +885,12 @@ video {
   width: 200px;
 }
 
-.w-\[300px\]{
-  width: 300px;
-}
-
-.w-\[350px\]{
-  width: 350px;
-}
-
-.w-\[550px\]{
-  width: 550px;
-}
-
 .w-auto{
   width: auto;
 }
 
 .w-full{
   width: 100%;
-}
-
-.w-11\/12{
-  width: 91.666667%;
-}
-
-.w-10{
-  width: 2.5rem;
-}
-
-.w-10\/12{
-  width: 83.333333%;
 }
 
 .flex-1{
@@ -1169,10 +1141,6 @@ video {
   padding: 0.5rem;
 }
 
-.p-20{
-  padding: 5rem;
-}
-
 .p-3{
   padding: 0.75rem;
 }
@@ -1247,6 +1215,10 @@ video {
   padding-bottom: 3.5rem;
 }
 
+.pb-3{
+  padding-bottom: 0.75rem;
+}
+
 .pb-8{
   padding-bottom: 2rem;
 }
@@ -1257,10 +1229,6 @@ video {
 
 .pl-12{
   padding-left: 3rem;
-}
-
-.pl-24{
-  padding-left: 6rem;
 }
 
 .pl-3{
@@ -1275,24 +1243,12 @@ video {
   padding-right: 0.5rem;
 }
 
-.pt-20{
-  padding-top: 5rem;
-}
-
 .pt-10{
   padding-top: 2.5rem;
 }
 
-.pb-10{
-  padding-bottom: 2.5rem;
-}
-
-.pb-2{
-  padding-bottom: 0.5rem;
-}
-
-.pb-3{
-  padding-bottom: 0.75rem;
+.pt-20{
+  padding-top: 5rem;
 }
 
 .text-left{
@@ -1555,14 +1511,6 @@ body {
     width: 50%;
   }
 
-  .md\:w-full{
-    width: 100%;
-  }
-
-  .md\:w-\[550px\]{
-    width: 550px;
-  }
-
   .md\:w-64{
     width: 16rem;
   }
@@ -1575,16 +1523,20 @@ body {
     width: 350px;
   }
 
+  .md\:w-full{
+    width: 100%;
+  }
+
+  .md\:grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-1{
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
   .md\:flex-row{
@@ -1604,6 +1556,10 @@ body {
   .lg\:mx-40{
     margin-left: 10rem;
     margin-right: 10rem;
+  }
+
+  .lg\:mb-0{
+    margin-bottom: 0px;
   }
 
   .lg\:mb-3{
@@ -1626,14 +1582,6 @@ body {
     margin-top: 2.5rem;
   }
 
-  .lg\:mb-4{
-    margin-bottom: 1rem;
-  }
-
-  .lg\:mb-0{
-    margin-bottom: 0px;
-  }
-
   .lg\:block{
     display: block;
   }
@@ -1642,20 +1590,8 @@ body {
     display: flex;
   }
 
-  .lg\:h-\[450px\]{
-    height: 450px;
-  }
-
-  .lg\:h-\[\]{
-    height: ;
-  }
-
   .lg\:h-\[500px\]{
     height: 500px;
-  }
-
-  .lg\:h-\[700px\]{
-    height: 700px;
   }
 
   .lg\:w-3\/6{
@@ -1690,16 +1626,16 @@ body {
     padding: 5rem;
   }
 
+  .lg\:pb-10{
+    padding-bottom: 2.5rem;
+  }
+
   .lg\:pl-24{
     padding-left: 6rem;
   }
 
   .lg\:pt-20{
     padding-top: 5rem;
-  }
-
-  .lg\:pb-10{
-    padding-bottom: 2.5rem;
   }
 
   .lg\:text-4xl{
