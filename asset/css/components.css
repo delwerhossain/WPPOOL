@@ -4,12 +4,12 @@
 @tailwind utilities;
 
 .btn {
-  @apply text-white p-3 rounded-full border border-white hover:bg-primary-light;
+  @apply text-white p-3 rounded-full border border-white hover:bg-primary-light ;
   font-family: Arial, sans-serif; /* Set your website default font here */
 }
 
 .btn-primary {
-  @apply bg-primary;
+  @apply bg-primary hover:text-white ;
 }
 
 .btn-secondary {
