@@ -832,6 +832,14 @@ video {
   margin-top: 2rem;
 }
 
+.ml-10{
+  margin-left: 2.5rem;
+}
+
+.mr-10{
+  margin-right: 2.5rem;
+}
+
 .block{
   display: block;
 }
@@ -1651,6 +1659,16 @@ body {
 .hover\:bg-primary-light:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(34 86 234 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-slate-100:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-secondary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .hover\:text-white:hover{
