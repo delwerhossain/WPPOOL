@@ -186,9 +186,9 @@
   </head>
   <body class="relative p-4">
     <header
-      class="bg-primary rounded-t-xl pl-10 pr-1 py-5 flex justify-between items-center relative"
+      class="bg-primary rounded-t-xl lg:pl-10 pl-3 pr-1 py-5 flex justify-between items-center relative"
     >
-      <a class="z-30" href="/">
+      <a class="" href="/">
         <img
           loading="lazy"
           src="./asset/images/logo.svg"
@@ -196,11 +196,11 @@
           class="w-auto"
         />
       </a>
-      <div class="flex items-center justify-evenly gap-4 relative">
+      <div class="flex items-center justify-evenly lg:gap-4 gap-2 relative">
         <img
           loading="lazy"
           id="share-icon"
-          class="z-20 btn p-3 hover:bg-green-300 cursor-pointer"
+          class="z-50 btn lg:p-3 p-2 hover:bg-green-300 cursor-pointer"
           src="./asset/images/icon/share.svg"
           alt="Share Icon"
         />
@@ -217,7 +217,7 @@
         <nav class="div_relative">
           <ul
             id="menu"
-            class="menu rounded-xl div_absolute mt-2 w-96 h-auto pt-20 bg-white shadow-lg z-10"
+            class="menu rounded-xl div_absolute mt-2 w-[338px] lg:w-[420px] max-w-lg mx-auto h-auto pt-20 bg-white shadow-lg z-10"
           >
             <li class="menu-item p-4 border-b">Item 1 Item 1 Item 1Item 1</li>
             <li class="menu-item p-4 border-b">Item 2</li>
@@ -228,10 +228,10 @@
     </header>
     <section class="text-white bg-primary py-10 rounded-b-xl">
       <div
-        class="grid xl:grid-cols-12 rounded-b-xl justify-center items-center"
+        class="grid sm:grid-cols-12  rounded-b-xl lg:justify-center justify-around lg:items-center"
       >
         <div
-          class="xl:col-span-3 grid grid-cols-2 md:grid-cols-1 gap-8 lg:pl-24 pl-12 lg:pt-20 pt-10 pb-14"
+          class="lg:col-span-3 col-span-4 grid grid-cols-2 md:grid-cols-1 lg:gap-8 gap-4 mx-auto lg:pl-24 pl-10 lg:pt-20 pt-10 pb-14"
         >
           <div>
             <h2 class="text-5xl">60</h2>
@@ -251,7 +251,7 @@
           </div>
         </div>
         <div
-          class="xl:col-span-7 flex flex-col justify-center items-center bg-home z-20 w-full h-[450px] relative"
+          class="lg:col-span-7 col-span-6 flex flex-col justify-center items-center bg-home z-20 w-full h-[450px] relative"
         >
           <div
             class="w-48 h-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 skew-x-[-20deg] border border-white opacity-100"
@@ -264,7 +264,7 @@
             </p>
           </div>
         </div>
-        <div class="xl:col-span-1 relative">
+        <div class="lg:col-span-1 sm:col-span-2  relative">
           <button
             class="z-20 bg-white shadow-2xl up-scroll rounded-full absolute bottom-10 right-10"
             aria-label="Scroll Down"
@@ -282,7 +282,7 @@
 
     <!-- Dashboard Section -->
     <section
-      class="mt-10 bg-white p-5 rounded-xl flex flex-col md:flex-row gap-3"
+      class="mt-10 bg-white p-5 rounded-xl flex flex-col xl:flex-row gap-3"
     >
       <!-- Sidebar -->
       <aside
@@ -330,22 +330,26 @@
       </aside>
 
       <!-- Main Content -->
-      <div class="flex-1 p-6">
+      <div class="lg:flex-1 p-6">
         <header class="flex items-center mb-4 justify-between">
           <div class="flex items-center">
             <div
               class="w-5 h-10 transform skew-x-[-20deg] border border-black mx-2"
             ></div>
-            <h2 class="text-4xl">The WPPOOL Index</h2>
+            <h2 class="lg:text-4xl text-2xl">The WPPOOL Index</h2>
           </div>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:gap-6 gap-3"
+        >
           <!-- Card 1 -->
           <div
-            class="bg-gray-200 flex justify-between items-center rounded-lg p-8 shadow"
+            class="bg-gray-200 flex justify-between items-center rounded-lg lg:p-8 p-4 shadow"
           >
-            <h2 class="text-4xl text-orange-600 font-semibold">+66.2%</h2>
+            <h2 class="lg:text-4xl text-3xl text-orange-600 font-semibold">
+              +66.2%
+            </h2>
             <p class="pr-2 border-r-4 border-orange-600">
               WPPOOL <br />
               Index
@@ -353,9 +357,11 @@
           </div>
           <!-- Card 2 -->
           <div
-            class="bg-gray-200 flex justify-between items-center rounded-lg p-8 shadow"
+            class="bg-gray-200 flex justify-between items-center rounded-lg lg:p-8 p-4 shadow"
           >
-            <h2 class="text-4xl text-blue-600 font-semibold">+66.2%</h2>
+            <h2 class="lg:text-4xl text-3xl text-blue-600 font-semibold">
+              +66.2%
+            </h2>
             <p class="pr-2 border-r-4 border-blue-600">
               WPPOOL <br />
               Index
@@ -363,9 +369,11 @@
           </div>
           <!-- Card 3 -->
           <div
-            class="bg-gray-200 flex justify-between items-center rounded-lg p-8 shadow"
+            class="bg-gray-200 flex justify-between items-center rounded-lg lg:p-8 p-4 shadow"
           >
-            <h2 class="text-4xl text-green-600 font-semibold">+66.2%</h2>
+            <h2 class="lg:text-4xl text-3xl text-green-600 font-semibold">
+              +66.2%
+            </h2>
             <p class="pr-2 border-r-4 border-green-600">
               WPPOOL <br />
               Index
@@ -373,9 +381,11 @@
           </div>
           <!-- Card 4 -->
           <div
-            class="bg-gray-200 flex justify-between items-center rounded-lg p-8 shadow"
+            class="bg-gray-200 flex justify-between items-center rounded-lg lg:p-8 p-4 shadow"
           >
-            <h2 class="text-4xl text-purple-600 font-semibold">+66.2%</h2>
+            <h2 class="lg:text-4xl text-3xl text-purple-600 font-semibold">
+              +66.2%
+            </h2>
             <p class="pr-2 border-r-4 border-purple-600">
               WPPOOL <br />
               Index
@@ -390,7 +400,7 @@
             <div
               class="bg-primary w-full md:w-[300px] h-[30px] rounded-2xl text-white flex justify-between items-center px-2 mb-2 md:mb-0"
             >
-              <p>sector</p>
+              <p class="ml-2 md:ml-0">sector</p>
               <img
                 loading="lazy"
                 src="./asset/images/icon/down-arrow-fill.svg"
@@ -400,7 +410,7 @@
             <div
               class="bg-primary w-full md:w-[300px] h-[30px] rounded-2xl text-white flex justify-between items-center px-2 mb-2 md:mb-0"
             >
-              <p>sector</p>
+              <p class="ml-2 md:ml-0">sector</p>
               <img
                 loading="lazy"
                 src="./asset/images/icon/down-arrow-fill.svg"
@@ -430,7 +440,7 @@
     <section class="lg:m-20 my-4">
       <div class="bg-white lg:p-20 p-6 lg:pb-10 pb-3 rounded-xl">
         <div class="lg:flex pb-8 justify-between items-center">
-          <h2 class="lg:text-5xl mb-4 lg:mb-0 text-2xl col-span-2">
+          <h2 class="lg:text-5xl mb-4 lg:mb-0 text-3xl col-span-2">
             All Companies
           </h2>
           <div class="relative col-span-2 lg:w-[550px] h-16">
@@ -817,7 +827,7 @@
     <!-- Potential Future Listings -->
     <section class="lg:m-20 m-4">
       <div>
-        <h1 class="text-5xl mt-2">Potential Future Listings</h1>
+        <h1 class="lg:text-5xl text-3xl  mt-2">Potential Future Listings</h1>
         <p class="md:w-3/6 mt-2 leading-6">
           Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
           vulputate libero et velit interdum, ac aliquet odio mattis. Class
@@ -892,7 +902,7 @@
     </section>
     <!-- State of USA -->
     <section class="lg:m-20 m-4">
-      <h1 class="lg:text-4xl text-3xl mt-5 lg:mt-1 lg:mb-3 mb-1">
+      <h1 class="lg:text-5xl text-3xl mt-5 lg:mt-1 lg:mb-3 mb-1">
         State of USA
       </h1>
       <button
@@ -905,12 +915,12 @@
           alt=""
         />
       </button>
-      <p class="lg:w-3/6 mt-2 leading-6">
+      <p class="lg:w-3/6 mt-2 text-lg mb-10 md:mb-0  leading-6">
         Click through the slides or download the report to view natively on your
         device.
       </p>
       <div
-        class="lg:mt-10 flex items-center bg-caro h-[450px] justify-center relative"
+        class=" flex items-center bg-caro lg:h-[450px] h-[300px] justify-center relative"
       >
         <!-- Swiper -->
         <div class="swiper-container mySwiper w-full lg:w-4/5">
@@ -974,7 +984,7 @@
               <button
                 class="swiper-button-next lg:p-10 custom-swiper-button"
               ></button>
-              <div class="flex items-center gap-1">
+              <div class="flex items-center gap-3 mt-3 lg:gap-6">
                 <p>Pages</p>
                 <button
                   class="btn shadow-xl bg-white text-black hover:text-white"
@@ -1001,9 +1011,9 @@
     </section>
 
     <!-- Stories & Ideas -->
-    <section class="lg:m-20 m-4">
+    <section class="lg:m-16 m-4">
       <div>
-        <h1 class="lg:text-5xl text-2xl mt-2">Stories & Ideas</h1>
+        <h1 class="lg:text-5xl text-3xl mt-2">Stories & Ideas</h1>
         <p class="lg:w-3/6 mt-2 leading-6">The latest news and updates</p>
       </div>
       <!-- image box -->
@@ -1158,31 +1168,155 @@
       </div>
     </section>
     <hr class="h-px my-8 w-11/12 mx-auto bg-[#90B8F0] border-0" />
-    <section class="lg:m-28 m-4">
+    <section class="lg:m-24 lg:my-16 m-4 mx-auto">
       <div class="">
-        <h1 class="text-5xl mb-8">Selected WPPOOL Portfolio Companies</h1>
+        <h1 class="lg:text-5xl text-3xl lg:mb-10 mb-4">
+          Selected WPPOOL Portfolio Companies
+        </h1>
       </div>
-      <div class="grid grid-cols-5 gap-6">
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/1.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/2.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/3.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/4.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/5.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/6.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/7.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/8.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/9.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/10.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/11.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/12.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/13.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/14.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/1.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/2.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/3.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/4.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/5.png" alt="" /></div>
-        <div class="w-10/12 p-4 h-[120px] bg-white"><img class="h-auto" src="./asset/images/portfolio/6.png" alt="" /></div>
+      <div
+        class="grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 mx-auto justify-center items-center gap-6"
+      >
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/1.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/2.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/3.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/4.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/5.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/6.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/7.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/8.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/9.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/10.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/11.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/12.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/13.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/14.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/1.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/2.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/3.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/4.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/5.png"
+            alt=""
+          />
+        </div>
+        <div class="w-10/12 p-4 h-[120px] mx-auto grid items-center bg-white">
+          <img
+            class="max-h-[90px] mx-auto w-auto"
+            src="./asset/images/portfolio/6.png"
+            alt=""
+          />
+        </div>
       </div>
     </section>
 
