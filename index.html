@@ -10,6 +10,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
     <style>
       body {
@@ -18,9 +22,10 @@
         background: #ebebeb;
       }
 
-      /* Custom scrollbar styling */
+      /* Custom scrollbar styling for both vertical and horizontal scrollbars */
       ::-webkit-scrollbar {
-        width: 7px;
+        width: 7px; /* For vertical scrollbar */
+        height: 7px; /* For horizontal scrollbar */
       }
 
       ::-webkit-scrollbar-track {
@@ -184,7 +189,7 @@
       }
     </script>
   </head>
-  <body class="relative p-4">
+  <body class="relative lg:p-4 p-2">
     <header
       class="bg-primary rounded-t-xl lg:pl-10 pl-3 pr-1 py-5 flex justify-between items-center relative"
     >
@@ -204,7 +209,7 @@
           src="./asset/images/icon/share.svg"
           alt="Share Icon"
         />
-        <button class="btn btn-primary z-20 hidden lg:block">
+        <button class="btn btn-primary z-40 hidden lg:block">
           Download the 2024 Report
         </button>
         <img
@@ -214,21 +219,28 @@
           src="./asset/images/icon/menu.svg"
           alt="Menu Icon"
         />
-        <nav class="div_relative">
+        <nav class="div_relative z-20">
           <ul
             id="menu"
-            class="menu rounded-xl div_absolute mt-2 w-[338px] lg:w-[420px] max-w-lg mx-auto h-auto pt-20 bg-white shadow-lg z-10"
+            class="menu rounded-xl div_absolute mt-2 w-[338px] lg:w-[420px] max-w-lg mx-auto h-auto pt-20 bg-white shadow-lg z-20"
           >
-            <li class="menu-item p-4 border-b">Item 1 Item 1 Item 1Item 1</li>
-            <li class="menu-item p-4 border-b">Item 2</li>
-            <li class="menu-item p-4 border-b">Item 3</li>
+            <li class="menu-item p-4 border-b">The WPPOOL Index</li>
+            <li class="menu-item p-4 border-b">All Companies</li>
+            <li class="menu-item p-4 border-b">Potential Future Listings</li>
+            <li class="menu-item p-4 border-b">State of USA</li>
+            <li class="menu-item p-4 border-b">Stories & Ideas</li>
+            <li class="menu-item p-4 border-b">About WPPOOL</li>
+            <li class="menu-item p-4 border-b">WPPOOL Portfolio Companies</li>
+            <li class="menu-item p-4 border-b mt-4 text-blue-600">
+              Visit WPPOOL
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-    <section class="text-white bg-primary py-10 rounded-b-xl">
+    <section class="text-white bg-primary lg:py-10 py-6 rounded-b-xl">
       <div
-        class="grid sm:grid-cols-12  rounded-b-xl lg:justify-center justify-around lg:items-center"
+        class="grid sm:grid-cols-12 rounded-b-xl lg:justify-center justify-around lg:items-center"
       >
         <div
           class="lg:col-span-3 col-span-4 grid grid-cols-2 md:grid-cols-1 lg:gap-8 gap-4 mx-auto lg:pl-24 pl-10 lg:pt-20 pt-10 pb-14"
@@ -251,7 +263,7 @@
           </div>
         </div>
         <div
-          class="lg:col-span-7 col-span-6 flex flex-col justify-center items-center bg-home z-20 w-full h-[450px] relative"
+          class="lg:col-span-7 col-span-6 flex flex-col justify-center items-center bg-home z-10 w-full h-[450px] relative"
         >
           <div
             class="w-48 h-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 skew-x-[-20deg] border border-white opacity-100"
@@ -264,14 +276,15 @@
             </p>
           </div>
         </div>
-        <div class="lg:col-span-1 sm:col-span-2  relative">
+        <div class="lg:col-span-1 sm:col-span-2 relative">
           <button
-            class="z-20 bg-white shadow-2xl up-scroll rounded-full absolute bottom-10 right-10"
+            id="scroll-button"
+            class="z-[999] bg-white border border-[#9f9c9c] shadow-2xl up-scroll rounded-full fixed bottom-10 right-10"
             aria-label="Scroll Down"
           >
             <img
               loading="lazy"
-              class="p-4"
+              class="p-4 md:w-16 w-12"
               src="./asset/images/icon/down-arrow.svg"
               alt="Down Arrow"
             />
@@ -282,7 +295,7 @@
 
     <!-- Dashboard Section -->
     <section
-      class="mt-10 bg-white p-5 rounded-xl flex flex-col xl:flex-row gap-3"
+      class=" animate__animated animate__fadeInLeft lg:mt-10 mt-5 bg-white p-5 rounded-xl flex flex-col xl:flex-row gap-3"
     >
       <!-- Sidebar -->
       <aside
@@ -827,7 +840,7 @@
     <!-- Potential Future Listings -->
     <section class="lg:m-20 m-4">
       <div>
-        <h1 class="lg:text-5xl text-3xl  mt-2">Potential Future Listings</h1>
+        <h1 class="lg:text-5xl text-3xl mt-2">Potential Future Listings</h1>
         <p class="md:w-3/6 mt-2 leading-6">
           Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
           vulputate libero et velit interdum, ac aliquet odio mattis. Class
@@ -915,12 +928,12 @@
           alt=""
         />
       </button>
-      <p class="lg:w-3/6 mt-2 text-lg mb-10 md:mb-0  leading-6">
+      <p class="lg:w-3/6 mt-2 text-lg mb-10 md:mb-0 leading-6">
         Click through the slides or download the report to view natively on your
         device.
       </p>
       <div
-        class=" flex items-center bg-caro lg:h-[450px] h-[300px] justify-center relative"
+        class="flex items-center bg-caro lg:h-[450px] h-[300px] justify-center relative"
       >
         <!-- Swiper -->
         <div class="swiper-container mySwiper w-full lg:w-4/5">
@@ -986,8 +999,8 @@
               ></button>
               <div class="flex items-center gap-3 mt-3 lg:gap-6">
                 <p>Pages</p>
-                <button
-                  class="btn shadow-xl bg-white text-black hover:text-white"
+                <button 
+                  class="animate__animated animate__bounce btn shadow-xl bg-white text-black hover:text-white"
                 >
                   1 and 2
                   <img
@@ -1319,6 +1332,69 @@
         </div>
       </div>
     </section>
+    <footer
+      class="bg-[#E6E6E6] md:mt-10 mt-5 w-11/12 mx-auto rounded-xl lg:p-20 p-5 md:p-10"
+    >
+      <div
+        class="lg:w-10/12 w-11/12 mx-auto grid lg:grid-cols-12 justify-center items-start gap-6"
+      >
+        <div class="lg:col-span-5 grid justify-between">
+          <h2 class="lg:text-3xl text-xl w-11/12">
+            Experience remarkable WordPress products with a new level of power,
+            beauty, and human-centered designs.
+          </h2>
+          <div class="grid lg:mt-60 mt-6">
+            <p class="text-[#9FA0A1]">©2024 Terms of Use Privacy Policy</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia,molestiae quas vel sint commodi repudiandae consequuntur
+              voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+              fugiat iusto fuga praesentium optio, eaque rerum! Provident
+              similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+              eius earum ut molestias architecto voluptate aliquam nihil,
+              eveniet aliquid culpa officia aut! Impedit sit sunt quaera
+            </p>
+          </div>
+        </div>
+        <div class="lg:col-span-3 text-xl">
+          <a href="#" class="text-[#9FA0A1]">Jump to</a>
+          <ul class="text-[#2042B6] mt-3 grid grid-cols-2 lg:grid-cols-1 gap-3">
+            <a href="#"><li>About Us</li></a>
+            <a href="#"><li>Portfolio</li></a>
+            <a href="#"><li>News</li></a>
+            <a href="#"><li>Stories</li></a>
+            <a href="#"><li>Jobs</li></a>
+            <a href="#"><li>About Us</li></a>
+          </ul>
+        </div>
+        <div class="1 lg:col-span-4 text-xl">
+          <h6 class="font-semibold mb-3">Cambridge</h6>
+          <p class="lg:w-8/12 w-full">
+            70728 Yost Burg, North Magdaleneview, UT 97952-2814
+          </p>
+          <hr class="h-px my-8 mx-auto bg-[#abb0b5] border-0" />
+          <h6 class="font-semibold mb-3">London</h6>
+          <p class="lg:w-8/12 w-full">
+            70728 Yost Burg, Suite 292 903 Stehr Streets, Langworthtown, SC
+            94577-9465
+          </p>
+          <hr class="h-px my-8 mx-auto bg-[#abb0b5] border-0" />
+          <h6 class="font-semibold mb-3">Cambridge</h6>
+          <p class="lg:w-8/12 w-full">
+            70728 Yost Burg, North Magdaleneview, UT 97952-2814
+          </p>
+          <hr class="h-px my-8 mx-auto bg-[#abb0b5] border-0" />
+          <div class="flex gap-10">
+            <a href="#"
+              ><img class="w-10" src="./asset/images/icon/linkedin.svg" alt=""
+            /></a>
+            <a href="#"
+              ><img class="w-10" src="./asset/images/icon/twitter.svg" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -1394,6 +1470,31 @@
 
       // Listen for the resize event on window
       window.addEventListener("resize", checkWidthAndReload);
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const scrollButton = document.getElementById("scroll-button");
+        const downArrow = "./asset/images/icon/down-arrow.svg";
+        const upArrow = "./asset/images/icon/up-arrow.png";
+
+        scrollButton.addEventListener("click", () => {
+          if (scrollButton.getAttribute("aria-label") === "Scroll Down") {
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            });
+            scrollButton.setAttribute("aria-label", "Scroll Up");
+            scrollButton.querySelector("img").src = upArrow;
+          } else {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+            scrollButton.setAttribute("aria-label", "Scroll Down");
+            scrollButton.querySelector("img").src = downArrow;
+          }
+        });
+      });
     </script>
   </body>
 </html>
