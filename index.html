@@ -40,6 +40,12 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #555;
       }
+      /* .fixed-scroll-button {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 9999;
+      } */
 
       /* Styles for the toggle menu */
       .menu {
@@ -191,7 +197,7 @@
   </head>
   <body class="relative lg:p-4 p-2">
     <header
-      class="animate__animated animate__backInLeft bg-primary rounded-t-xl lg:pl-10 pl-3 pr-1 py-5 flex justify-between items-center relative"
+      class="animate__animated animate__backInUp bg-primary rounded-t-xl lg:pl-10 pl-3 pr-1 py-5 flex justify-between items-center relative"
     >
       <a class="" href="/">
         <img
@@ -221,23 +227,23 @@
         />
         <nav class="div_relative z-20">
           <ul
-            id="menu"
-            class="menu rounded-xl mr-10 div_absolute mt-2 w-[338px] lg:w-[420px] max-w-lg mx-auto h-auto pt-20 bg-white shadow-lg z-20"
-          >
-            <li class="menu-item p-4">The WPPOOL Index</li>
-            <li class="menu-item p-4">All Companies</li>
-            <li class="menu-item p-4">Potential Future Listings</li>
-            <li class="menu-item p-4">State of USA</li>
-            <li class="menu-item p-4">Stories & Ideas</li>
-            <li class="menu-item p-4">About WPPOOL</li>
-            <li class="menu-item p-4">WPPOOL Portfolio Companies</li>
-            <li class="menu-item p-4 mt-4 text-blue-600">Visit WPPOOL</li>
-          </ul>
+          id="menu"
+          class="menu rounded-xl mr-10 div_absolute mt-2 w-[338px] lg:w-[420px] max-w-lg mx-auto h-auto pt-20 bg-white shadow-lg z-20"
+        >
+          <li class="menu-item p-4">The WPPOOL Index</li>
+          <li class="menu-item p-4">All Companies</li>
+          <li class="menu-item p-4">Potential Future Listings</li>
+          <li class="menu-item p-4">State of USA</li>
+          <li class="menu-item p-4">Stories & Ideas</li>
+          <li class="menu-item p-4">About WPPOOL</li>
+          <li class="menu-item p-4">WPPOOL Portfolio Companies</li>
+          <li class="menu-item p-4 mt-4 text-blue-600">Visit WPPOOL</li>
+        </ul>
         </nav>
       </div>
     </header>
     <section
-      class="animate__animated animate__backInRight text-white bg-primary lg:py-10 py-6 rounded-b-xl"
+      class="animate__animated  animate__backInDown text-white bg-primary lg:py-10 py-6 rounded-b-xl"
     >
       <div
         class="grid sm:grid-cols-12 rounded-b-xl lg:justify-center justify-around lg:items-center"
@@ -279,7 +285,7 @@
         <div class="lg:col-span-1 sm:col-span-2 relative">
           <button
             id="scroll-button"
-            class="z-[999] bg-white border border-[#9f9c9c] shadow-2xl up-scroll rounded-full fixed bottom-10 right-10"
+            class="z-[999] bg-white border  border-[#9f9c9c] shadow-2xl up-scroll rounded-full fixed bottom-10 right-10"
             aria-label="Scroll Down"
           >
             <img
@@ -295,11 +301,12 @@
 
     <!-- Dashboard Section -->
     <section
-      class="animate__animated animate__backInLeft lg:mt-10 mt-5 bg-white p-5 rounded-xl flex flex-col xl:flex-row gap-3"
+      class="lg:mt-10 mt-5 bg-white p-5 rounded-xl flex flex-col xl:flex-row gap-3"
     >
       <!-- Sidebar -->
       <aside
-        class="w-full md:w-64 bg-gray-100 text-gray-700 p-4 flex flex-col rounded-xl mb-6 md:mb-0"
+        id="animated-element"
+        class="animate__animated hiddden w-full md:w-64 bg-gray-100 text-gray-700 p-4 flex flex-col rounded-xl mb-6 md:mb-0"
       >
         <nav>
           <ul class="space-y-4">
@@ -343,7 +350,10 @@
       </aside>
 
       <!-- Main Content -->
-      <div class="lg:flex-1 p-6">
+      <div
+        id="animated-element"
+        class="animate__animated hiddden lg:flex-1 p-6"
+      >
         <header class="flex items-center mb-4 justify-between">
           <div class="flex items-center">
             <div
@@ -450,7 +460,10 @@
       </div>
     </section>
 
-    <section class="animate__animated animate__backInRight lg:m-20 my-4">
+    <section
+      id="animated-element"
+      class="animate__animated hiddden lg:m-20 my-4"
+    >
       <div class="bg-white lg:p-20 p-6 lg:pb-10 pb-3 rounded-xl">
         <div class="lg:flex pb-8 justify-between items-center">
           <h2 class="lg:text-5xl mb-4 lg:mb-0 text-3xl col-span-2">
@@ -838,7 +851,10 @@
       </div>
     </section>
     <!-- Potential Future Listings -->
-    <section class="animate__animated lg:m-20 m-4">
+    <section
+      id="animated-element"
+      class="animate__animated hiddden lg:m-20 m-4"
+    >
       <div>
         <h1 class="lg:text-5xl text-3xl mt-2">Potential Future Listings</h1>
         <p class="md:w-3/6 mt-2 leading-6">
@@ -914,7 +930,10 @@
       </div>
     </section>
     <!-- State of USA -->
-    <section class="animate__animated lg:m-20 m-4">
+    <section
+      id="animated-element"
+      class="animate__animated hiddden lg:m-20 m-4"
+    >
       <h1 class="lg:text-5xl text-3xl mt-5 lg:mt-1 lg:mb-3 mb-1">
         State of USA
       </h1>
@@ -1000,7 +1019,8 @@
               <div class="flex items-center gap-3 mt-3 lg:gap-6">
                 <p>Pages</p>
                 <button
-                  class="animate__animated animate__bounce btn shadow-xl bg-white text-black hover:text-white"
+                  id="animated-element"
+                  class="animate__animated hiddden animate__bounce btn shadow-xl bg-white text-black hover:text-white"
                 >
                   1 and 2
                   <img
@@ -1024,7 +1044,10 @@
     </section>
 
     <!-- Stories & Ideas -->
-    <section class="animate__animated lg:m-16 m-4">
+    <section
+      id="animated-element"
+      class="animate__animated hiddden lg:m-16 m-4"
+    >
       <div>
         <h1 class="lg:text-5xl text-3xl mt-2">Stories & Ideas</h1>
         <p class="lg:w-3/6 mt-2 leading-6">The latest news and updates</p>
@@ -1156,10 +1179,14 @@
       </div>
     </section>
     <hr
-      class="animate__animated h-px my-8 w-11/12 mx-auto bg-[#90B8F0] border-0"
+      id="animated-element"
+      class="animate__animated hiddden h-px my-8 w-11/12 mx-auto bg-[#90B8F0] border-0"
     />
     <!-- About WPPOOL -->
-    <section class="animate__animated lg:m-20 m-4">
+    <section
+      id="animated-element"
+      class="animate__animated hiddden lg:m-20 m-4"
+    >
       <div class="lg:flex justify-between items-center bg-white rounded-xl">
         <div class="p-10 lg:p-6 lg:ml-20">
           <h1 class="lg:text-5xl text-2xl mt-2">About WPPOOL</h1>
@@ -1183,9 +1210,13 @@
       </div>
     </section>
     <hr
-      class="animate__animated h-px my-8 w-11/12 mx-auto bg-[#90B8F0] border-0"
+      id="animated-element"
+      class="animate__animated hiddden h-px my-8 w-11/12 mx-auto bg-[#90B8F0] border-0"
     />
-    <section class="animate__animated lg:m-24 lg:my-16 m-4 mx-auto">
+    <section
+      id="animated-element"
+      class="animate__animated hiddden lg:m-24 lg:my-16 m-4 mx-auto"
+    >
       <div class="">
         <h1 class="lg:text-5xl text-3xl lg:mb-10 mb-4">
           Selected WPPOOL Portfolio Companies
@@ -1357,7 +1388,8 @@
       </div>
     </section>
     <footer
-      class="animate__animated bg-[#E6E6E6] md:mt-10 mt-5 w-11/12 mx-auto rounded-xl lg:p-20 p-5 md:p-10"
+      id="animated-element"
+      class="animate__animated hiddden bg-[#E6E6E6] md:mt-10 mt-5 w-11/12 mx-auto rounded-xl lg:p-20 p-5 md:p-10"
     >
       <div
         class="lg:w-10/12 w-11/12 mx-auto grid lg:grid-cols-12 justify-center items-start gap-6"
@@ -1410,16 +1442,71 @@
           <hr class="h-px my-8 mx-auto bg-[#abb0b5] border-0" />
           <div class="flex gap-10">
             <a href="#"
-              ><img  loading="lazy" class="w-10" src="./asset/images/icon/linkedin.svg" alt=""
+              ><img
+                loading="lazy"
+                class="w-10"
+                src="./asset/images/icon/linkedin.svg"
+                alt=""
             /></a>
             <a href="#"
-              ><img  loading="lazy" class="w-10" src="./asset/images/icon/twitter.svg" alt=""
+              ><img
+                loading="lazy"
+                class="w-10"
+                src="./asset/images/icon/twitter.svg"
+                alt=""
             /></a>
           </div>
         </div>
       </div>
     </footer>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const animatedElements =
+          document.querySelectorAll(".animate__animated");
+        const scrollButton = document.getElementById("scroll-button");
+        const downArrow = "./asset/images/icon/down-arrow.svg";
+        const upArrow = "./asset/images/icon/up-arrow.png";
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                entry.target.classList.remove("hidden");
+                entry.target.classList.add("animate__fadeInUp");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        animatedElements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        scrollButton.addEventListener("click", () => {
+          if (scrollButton.getAttribute("aria-label") === "Scroll Down") {
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            });
+            scrollButton.setAttribute("aria-label", "Scroll Up");
+            scrollButton.querySelector("img").src = upArrow;
+          } else {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+            scrollButton.setAttribute("aria-label", "Scroll Down");
+            scrollButton.querySelector("img").src = downArrow;
+          }
+        });
+      });
+    </script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -1495,7 +1582,7 @@
       // Listen for the resize event on window
       window.addEventListener("resize", checkWidthAndReload);
     </script>
-    <script>
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", () => {
         const scrollButton = document.getElementById("scroll-button");
         const downArrow = "./asset/images/icon/down-arrow.svg";
@@ -1519,6 +1606,6 @@
           }
         });
       });
-    </script>
+    </script> -->
   </body>
 </html>
