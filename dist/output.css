@@ -733,6 +733,10 @@ video {
   grid-column: span 6 / span 6;
 }
 
+.col-span-8{
+  grid-column: span 8 / span 8;
+}
+
 .m-4{
   margin: 1rem;
 }
@@ -1423,6 +1427,10 @@ video {
   padding-top: 5rem;
 }
 
+.pr-10{
+  padding-right: 2.5rem;
+}
+
 .text-left{
   text-align: left;
 }
@@ -1711,6 +1719,10 @@ body {
 
   .sm\:grid-cols-12{
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-10{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
   }
 }
 
