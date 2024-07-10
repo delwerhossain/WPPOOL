@@ -4,12 +4,11 @@
 @tailwind utilities;
 
 .btn {
-  @apply text-white p-3 rounded-full border border-white hover:bg-primary-light ;
-  font-family: Arial, sans-serif; /* Set your website default font here */
+  @apply text-white p-3 rounded-full border border-white hover:bg-primary-light font-sans;
 }
 
 .btn-primary {
-  @apply bg-primary hover:text-white ;
+  @apply bg-primary hover:text-white;
 }
 
 .btn-secondary {
@@ -20,17 +19,14 @@
   @apply bg-primary text-white shadow-defult;
 }
 
-
-.shadow-defult{
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+.shadow-defult {
+  @apply shadow-lg;
 }
 
-.time-active{
-  @apply bg-primary text-white py-1 px-3  rounded-full shadow-defult;
+.time-active {
+  @apply bg-primary text-white py-1 px-3 rounded-full shadow-defult;
 }
-/* Ensuring box-sizing property */
+
 .hover-outline {
-  outline: 1px solid white;
-  box-sizing: border-box;
-  padding: 4px;
+  @apply outline-white outline-1 box-border p-1;
 }

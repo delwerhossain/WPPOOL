@@ -13,7 +13,7 @@
   color: #000;
 }
 
-/* Custom scrollbar styling for both vertical and horizontal scrollbars */
+/* Custom scrollbar styling */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -39,15 +39,16 @@
 }
 
 @font-face {
-  font-family: Nantes-Regular;
+  font-family: 'Nantes-Regular';
   src: url("./asset/font/Nantes-Regular.woff");
 }
 
 body {
-  font-family: myFirstFont;
+  font-family: 'Nantes-Regular', sans-serif;
   color: #191618;
   background: #ebebeb;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -58,23 +59,15 @@ html {
 *::after {
   box-sizing: border-box;
 }
+
 .bg-custom-green {
   background-color: #afcd80;
 }
 
 /* Styles for the toggle menu */
 .menu {
+  @apply absolute right-0 top-full bg-white shadow-lg z-10 opacity-0 transform -translate-y-2 transition-all duration-300 ease-in-out;
   display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  transition: opacity 0.3s ease-in-out, transform 0.9s ease-in-out,
-    height 0.9s ease-in-out;
-  opacity: 0;
-  transform: translateY(-10px);
   height: 0;
   overflow: hidden;
 }
@@ -87,8 +80,7 @@ html {
 }
 
 .menu-item {
-  padding: 1rem;
-  border-bottom: 1px solid #e5e7eb;
+  @apply p-4 border-b border-gray-300;
 }
 
 .menu-item:last-child {
@@ -96,13 +88,11 @@ html {
 }
 
 .div_relative {
-  position: relative;
+  @apply relative;
 }
 
 .div_absolute {
-  position: absolute;
-  top: -48px;
-  right: 0;
+  @apply absolute -top-12 right-0;
 }
 
 .bg-home {
@@ -123,51 +113,32 @@ html {
 }
 
 .parallelogram-border {
+  @apply absolute left-1/2 top-1/2 border opacity-100 transform -translate-x-1/2 -translate-y-1/2 skew-x-12;
   width: 200px;
   height: 550px;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%) skewX(-20deg);
-  border: 1px solid rgba(255, 255, 255, 1);
-  opacity: 1;
 }
 
 .parallelogram-border-dashboard {
+  @apply border opacity-100 transform -translate-x-1/2 -translate-y-1/2 skew-x-12 mx-2;
   width: 20px;
   height: 50px;
-  transform: translate(-50%, -50%) skewX(-20deg);
-  border: 1px solid rgb(3, 0, 0);
-  opacity: 1;
-  margin: 0 10px;
 }
 
 /* Swiper slider styles */
 .swiper-container {
-  width: 100%;
-  overflow: hidden;
+  @apply w-full overflow-hidden;
 }
 
 .swiper-wrapper {
-  display: flex;
+  @apply flex;
 }
 
 .swiper-slide {
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
+  @apply flex-shrink-0 w-full h-full;
 }
 
 .custom-swiper-button {
-  width: 40px;
-  height: 40px;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @apply w-10 h-10 text-black flex items-center justify-center rounded-full bg-white shadow-lg;
 }
 
 .custom-swiper-button img {
@@ -177,12 +148,11 @@ html {
 
 .swiper-button-prev,
 .swiper-button-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
+  @apply absolute top-1/2 transform -translate-y-1/2 z-10 ;
 }
 
 .swiper-pagination {
-  bottom: 20px;
+  @apply bottom-5;
 }
+
+

@@ -60,10 +60,10 @@
   </head>
 
   <body>
-    <div id="main-content" >
+    <div id="main-content">
       <div class="relative lg:p-4 p-2">
         <header
-          class="animate__animated bg-primary rounded-t-xl lg:pl-10 pl-3 pr-1 py-5 flex justify-between items-center relative"
+          class="bg-primary rounded-t-xl lg:pl-10 pl-3 pr-1 py-5 flex justify-between items-center relative"
         >
           <a class="" href="/">
             <img
@@ -96,14 +96,16 @@
                 id="menu"
                 class="menu rounded-xl div_absolute pl-10 mt-2 w-[338px] lg:w-[420px] max-w-lg mx-auto h-auto pt-20 bg-white shadow-lg z-50 text-xl"
               >
-                <li class="p-4">The WPPOOL Index</li>
-                <li class="p-4">All Companies</li>
-                <li class="p-4">Potential Future Listings</li>
-                <li class="p-4">State of USA</li>
-                <li class="p-4">Stories & Ideas</li>
-                <li class="p-4">About WPPOOL</li>
-                <li class="p-4">WPPOOL Portfolio Companies</li>
-                <li class="p-4 mt-4 text-blue-600">Visit WPPOOL</li>
+                <a href="#"><li class="p-4">The WPPOOL Index</li></a>
+                <a href="#"><li class="p-4">All Companies</li></a>
+                <a href="#"><li class="p-4">Potential Future Listings</li></a>
+                <a href="#"><li class="p-4">State of USA</li></a>
+                <a href="#"><li class="p-4">Stories & Ideas</li></a>
+                <a href="#"><li class="p-4">About WPPOOL</li></a>
+                <a href="#"><li class="p-4">WPPOOL Portfolio Companies</li></a>
+                <a href="#"
+                  ><li class="p-4 mt-4 text-blue-600">Visit WPPOOL</li></a
+                >
               </ul>
             </nav>
           </div>
@@ -118,19 +120,19 @@
               class="lg:col-span-3 col-span-4 grid grid-cols-2 md:grid-cols-1 lg:gap-8 gap-4 mx-auto lg:pl-24 pl-10 lg:pt-20 pt-10 pb-14"
             >
               <div>
-                <h2 class="lg:text-5xl text-3xl ">60</h2>
+                <h2 class="lg:text-5xl text-3xl">60</h2>
                 <p>companies</p>
               </div>
               <div>
-                <h2 class="lg:text-5xl text-3xl ">$100B</h2>
+                <h2 class="lg:text-5xl text-3xl">$100B</h2>
                 <p>Market cap</p>
               </div>
               <div>
-                <h2 class="lg:text-5xl text-3xl ">3.5x</h2>
+                <h2 class="lg:text-5xl text-3xl">3.5x</h2>
                 <p>Revenue multiple</p>
               </div>
               <div>
-                <h2 class="lg:text-5xl text-3xl ">60%</h2>
+                <h2 class="lg:text-5xl text-3xl">60%</h2>
                 <p>LTM avg. revenue growth rate</p>
               </div>
             </div>
@@ -168,7 +170,7 @@
 
         <!-- Dashboard Section -->
         <section
-          class=" lg:mt-10 mt-5 bg-white p-5 rounded-xl flex flex-col xl:flex-row gap-3"
+          class="lg:mt-10 mt-5 bg-white p-5 rounded-xl flex flex-col xl:flex-row gap-3"
         >
           <!-- Sidebar -->
           <aside
@@ -791,10 +793,8 @@
           </div>
         </section>
         <!-- State of USA -->
-        <section class="lg:m-20 m-4 my-5">
-          <h1 class="lg:text-5xl text-3xl mt-5 lg:mt-1 my-3">
-            State of USA
-          </h1>
+        <section class="lg:m-20 m-4 my-5 lg:my-1">
+          <h1 class="lg:text-5xl text-3xl mt-5 lg:mt-1 my-3">State of USA</h1>
           <button
             class="btn btn-primary my-5 lg:text-4xl text-xl flex items-center justify-between py-1 px-4 gap-2 w-44"
           >
@@ -865,22 +865,14 @@
                 </div>
               </div>
               <!-- Navigation buttons and Pages info -->
-              <div
-                class="flex flex-wrap items-center lg:justify-end mt-4 lg:mx-40"
-              >
+              <div class="flex flex-wrap items-center lg:justify-end mt-4 lg:mx-40">
                 <div class="flex lg:gap-8 gap-4 items-center flex-wrap text-xl">
                   <!-- Custom navigation buttons -->
-                  <button
-                    class="swiper-button-prev lg:p-10 custom-swiper-button"
-                  ></button>
-                  <button
-                    class="swiper-button-next lg:p-10 custom-swiper-button"
-                  ></button>
+                  <button class="swiper-button-prev lg:p-4 custom-swiper-button"></button>
+                  <button class="swiper-button-next lg:p-4 custom-swiper-button"></button>
                   <div class="flex items-center gap-3 mt-3 lg:gap-6">
                     <p>Pages</p>
-                    <button
-                      class="btn shadow-xl bg-white text-black hover:text-white"
-                    >
+                    <button class="btn shadow-xl bg-white text-black hover:text-white">
                       1 and 2
                       <img
                         loading="lazy"
@@ -898,14 +890,15 @@
                   </button>
                 </div>
               </div>
+              
             </div>
           </div>
         </section>
 
         <!-- Stories & Ideas -->
-        <section class="lg:m-16 m-4">
+        <section class="lg:m-16 m-4 mt-10 lg:mt-0">
           <div>
-            <h1 class="lg:text-5xl text-3xl mx-4">Stories & Ideas</h1>
+            <h1 class="lg:text-5xl text-3xl my-4 lg:my-0">Stories & Ideas</h1>
             <p class="lg:w-3/6 mt-2 leading-6">The latest news and updates</p>
           </div>
           <!-- image box -->
