@@ -1,12 +1,9 @@
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   // Loading overlay
-//   setTimeout(function () {
-//     document.getElementById("loading").style.display = "none";
-//     document.getElementById("main-content").classList.remove("hidden");
-//   }, 1000);
+  //   setTimeout(function () {
+  //     document.getElementById("loading").style.display = "none";
+  //     document.getElementById("main-content").classList.remove("hidden");
+  //   }, 1000);
 
   // Swiper initialization
   new Swiper(".mySwiper", {
@@ -53,12 +50,31 @@ document.addEventListener("DOMContentLoaded", function () {
       ? `${menu.scrollHeight}px`
       : "0";
   });
+  // auto reload
+  // Tailwind CSS breakpoints
+  const breakpoints = {
+    sm: 640,
+    md: 768,
+    lg: 1024,
+    xl: 1280,
+    "2xl": 1536,
+  };
 
-  // Width change reload
-  let initialWidth = window.innerWidth;
+  // Determine the initial breakpoint
+  let initialBreakpoint = getCurrentBreakpoint(window.innerWidth);
+
+  function getCurrentBreakpoint(width) {
+    if (width < breakpoints.sm) return "default";
+    if (width >= breakpoints.sm && width < breakpoints.md) return "sm";
+    if (width >= breakpoints.md && width < breakpoints.lg) return "md";
+    if (width >= breakpoints.lg && width < breakpoints.xl) return "lg";
+    if (width >= breakpoints.xl && width < breakpoints["2xl"]) return "xl";
+    return "2xl";
+  }
 
   window.addEventListener("resize", function () {
-    if (window.innerWidth !== initialWidth) {
+    let currentBreakpoint = getCurrentBreakpoint(window.innerWidth);
+    if (currentBreakpoint !== initialBreakpoint) {
       window.location.reload();
     }
   });

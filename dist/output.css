@@ -932,10 +932,6 @@ video {
   width: 91.666667%;
 }
 
-.w-12{
-  width: 3rem;
-}
-
 .w-2{
   width: 0.5rem;
 }
@@ -956,6 +952,10 @@ video {
   width: 1.5rem;
 }
 
+.w-8{
+  width: 2rem;
+}
+
 .w-8\/12{
   width: 66.666667%;
 }
@@ -974,10 +974,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.w-8{
-  width: 2rem;
 }
 
 .max-w-lg{
@@ -1364,10 +1360,6 @@ video {
   padding-top: 5rem;
 }
 
-.pl-5{
-  padding-left: 1.25rem;
-}
-
 .text-left{
   text-align: left;
 }
@@ -1384,11 +1376,6 @@ video {
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-lg{
@@ -1574,6 +1561,10 @@ body {
   font-family: myFirstFont;
   color: #191618;
   background: #ebebeb;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Global box-sizing reset */
@@ -1778,10 +1769,6 @@ body {
   .sm\:col-span-2{
     grid-column: span 2 / span 2;
   }
-
-  .sm\:grid-cols-12{
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
 }
 
 @media (min-width: 768px){
@@ -1821,8 +1808,16 @@ body {
     width: 100%;
   }
 
+  .md\:w-12{
+    width: 3rem;
+  }
+
   .md\:grid-cols-1{
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-12{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .md\:grid-cols-2{
@@ -1831,10 +1826,6 @@ body {
 
   .md\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-12{
-    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .md\:flex-row{
@@ -1851,6 +1842,10 @@ body {
 
   .md\:p-4{
     padding: 1rem;
+  }
+
+  .md\:p-3{
+    padding: 0.75rem;
   }
 
   .md\:text-7xl{
