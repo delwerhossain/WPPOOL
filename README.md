@@ -52,12 +52,26 @@ To run this project locally, you need to have a web browser and optionally a loc
    ```sh
    git clone https://github.com/delwerhossain/WPPOOL.git
    ```
-2. **Navigate to the project directory:**
+2. **Build install and  CSS run  :**
    ```sh
-   cd WPPOOL
+   npm i
+   ```
+   ```sh
+   npx tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch
+   ```
+3. **Open the `index.html` file directly in your web browser:**
+
+   ```sh
+   open index.html
    ```
 
-### Setting Up Tailwind CSS
+   OR
+
+4. **Use a local server to serve the files:**
+
+   If you have Live Server installed in Visual Studio Code, right-click on the `index.html` file and select `Open with Live Server`.
+
+### New project Setting Up Tailwind CSS
 
 1. **Install Tailwind CSS via npm:**
    ```sh
@@ -158,63 +172,60 @@ let swiper = new Swiper(".mySwiper", {
 ### Menu Icon toggle
 
 ```js
+// Toggle menu icon
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  const shareIcon = document.getElementById("share-icon");
+  const menuIcon = document.getElementById("menu-icon");
 
-  // Toggle menu icon
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    const shareIcon = document.getElementById("share-icon");
-    const menuIcon = document.getElementById("menu-icon");
+  menuIcon.addEventListener("click", function () {
+    menu.classList.toggle("active");
 
-    menuIcon.addEventListener("click", function () {
-      menu.classList.toggle("active");
+    menuIcon.src = menu.classList.contains("active")
+      ? "./asset/images/icon/close.svg"
+      : "./asset/images/icon/menu.svg";
 
-      menuIcon.src = menu.classList.contains("active")
-        ? "./asset/images/icon/close.svg"
-        : "./asset/images/icon/menu.svg";
+    shareIcon.classList.toggle("bg-custom-green");
 
-      shareIcon.classList.toggle("bg-custom-green");
-
-      menu.style.height = menu.classList.contains("active")
-        ? `${menu.scrollHeight}px`
-        : "0";
-    });
-  }
+    menu.style.height = menu.classList.contains("active")
+      ? `${menu.scrollHeight}px`
+      : "0";
+  });
+}
 ```
 
 ## Scroll Button
 
 ```js
+// Handle scroll button
+function handleScrollButton() {
+  const scrollButton = document.getElementById("scroll-button");
+  const downArrow = "./asset/images/icon/down-arrow.svg";
+  const upArrow = "./asset/images/icon/up-arrow.png";
 
-
-  // Handle scroll button
-  function handleScrollButton() {
-    const scrollButton = document.getElementById("scroll-button");
-    const downArrow = "./asset/images/icon/down-arrow.svg";
-    const upArrow = "./asset/images/icon/up-arrow.png";
-
-    function updateScrollButton() {
-      if (window.scrollY === 0) {
-        scrollButton.setAttribute("aria-label", "Scroll Down");
-        scrollButton.querySelector("img").src = downArrow;
-      } else {
-        scrollButton.setAttribute("aria-label", "Scroll Up");
-        scrollButton.querySelector("img").src = upArrow;
-      }
+  function updateScrollButton() {
+    if (window.scrollY === 0) {
+      scrollButton.setAttribute("aria-label", "Scroll Down");
+      scrollButton.querySelector("img").src = downArrow;
+    } else {
+      scrollButton.setAttribute("aria-label", "Scroll Up");
+      scrollButton.querySelector("img").src = upArrow;
     }
-
-    // Update button icon on scroll
-    window.addEventListener("scroll", updateScrollButton);
-    updateScrollButton(); // Initial check
-
-    // Scroll to top or bottom on button click
-    scrollButton.addEventListener("click", function () {
-      window.scrollTo({
-        top:
-          scrollButton.getAttribute("aria-label") === "Scroll Down"
-            ? document.body.scrollHeight
-            : 0,
-        behavior: "smooth",
-      });
-    });
   }
+
+  // Update button icon on scroll
+  window.addEventListener("scroll", updateScrollButton);
+  updateScrollButton(); // Initial check
+
+  // Scroll to top or bottom on button click
+  scrollButton.addEventListener("click", function () {
+    window.scrollTo({
+      top:
+        scrollButton.getAttribute("aria-label") === "Scroll Down"
+          ? document.body.scrollHeight
+          : 0,
+      behavior: "smooth",
+    });
+  });
+}
 ```
