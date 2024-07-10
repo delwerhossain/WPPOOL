@@ -1620,7 +1620,7 @@ body {
 }
 
 .bg-home {
-  background-image: url("./asset/images/home_bg-removebg.png");
+  background-image: url("/asset/images/home_bg-removebg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
