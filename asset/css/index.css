@@ -6,7 +6,9 @@
 @tailwind utilities;
 
 /* Custom selection color styles */
-::selection, ::-webkit-selection, ::-moz-selection {
+::selection,
+::-webkit-selection,
+::-moz-selection {
   background: #9fb8ff;
   color: #000;
 }
@@ -56,6 +58,9 @@ html {
 *::after {
   box-sizing: border-box;
 }
+.bg-custom-green {
+  background-color: #afcd80;
+}
 
 /* Styles for the toggle menu */
 .menu {
@@ -66,7 +71,8 @@ html {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 10;
-  transition: opacity 0.3s ease-in-out, transform 0.9s ease-in-out, height 0.9s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.9s ease-in-out,
+    height 0.9s ease-in-out;
   opacity: 0;
   transform: translateY(-10px);
   height: 0;

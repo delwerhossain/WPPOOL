@@ -38,18 +38,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const menu = document.getElementById("menu");
     const shareIcon = document.getElementById("share-icon");
     const menuIcon = this;
-
+  
     menu.classList.toggle("active");
-
+  
     menuIcon.src = menu.classList.contains("active")
       ? "./asset/images/icon/close.svg"
       : "./asset/images/icon/menu.svg";
-
-    shareIcon.classList.toggle("bg-[#AFCD80]");
+  
+    shareIcon.classList.toggle("bg-custom-green");
+  
     menu.style.height = menu.classList.contains("active")
       ? `${menu.scrollHeight}px`
       : "0";
   });
+  
   // auto reload
   // Tailwind CSS breakpoints
   const breakpoints = {

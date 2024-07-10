@@ -1526,7 +1526,9 @@ video {
 
 /* Custom selection color styles */
 
-::selection, ::-webkit-selection, ::-moz-selection {
+::selection,
+::-webkit-selection,
+::-moz-selection {
   background: #9fb8ff;
   color: #000;
 }
@@ -1575,6 +1577,10 @@ html {
   box-sizing: border-box;
 }
 
+.bg-custom-green {
+  background-color: #afcd80;
+}
+
 /* Styles for the toggle menu */
 
 .menu {
@@ -1585,7 +1591,8 @@ html {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 10;
-  transition: opacity 0.3s ease-in-out, transform 0.9s ease-in-out, height 0.9s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.9s ease-in-out,
+    height 0.9s ease-in-out;
   opacity: 0;
   transform: translateY(-10px);
   height: 0;
@@ -1784,8 +1791,8 @@ html {
     margin-top: 2.5rem;
   }
 
-  .md\:w-16{
-    width: 4rem;
+  .md\:w-12{
+    width: 3rem;
   }
 
   .md\:w-3\/6{
@@ -1806,10 +1813,6 @@ html {
 
   .md\:w-full{
     width: 100%;
-  }
-
-  .md\:w-12{
-    width: 3rem;
   }
 
   .md\:grid-cols-1{
@@ -1838,10 +1841,6 @@ html {
 
   .md\:p-10{
     padding: 2.5rem;
-  }
-
-  .md\:p-4{
-    padding: 1rem;
   }
 
   .md\:p-3{
