@@ -976,6 +976,10 @@ video {
   width: 100%;
 }
 
+.w-8{
+  width: 2rem;
+}
+
 .max-w-lg{
   max-width: 32rem;
 }
@@ -1358,6 +1362,10 @@ video {
 
 .pt-20{
   padding-top: 5rem;
+}
+
+.pl-5{
+  padding-left: 1.25rem;
 }
 
 .text-left{
@@ -1825,6 +1833,10 @@ body {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-12{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
   .md\:flex-row{
     flex-direction: row;
   }
@@ -1835,6 +1847,10 @@ body {
 
   .md\:p-10{
     padding: 2.5rem;
+  }
+
+  .md\:p-4{
+    padding: 1rem;
   }
 
   .md\:text-7xl{
