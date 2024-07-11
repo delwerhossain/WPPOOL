@@ -40,7 +40,7 @@
 
 @font-face {
   font-family: 'Nantes-Regular';
-  src: url("./asset/font/Nantes-Regular.woff");
+  src: url("/asset/font/Nantes-Regular.woff");
 }
 
 body {
@@ -105,7 +105,7 @@ html {
 }
 
 .bg-caro {
-  background-image: url("./asset/images/bg-caro.png");
+  background-image: url("/asset/images/bg-caro.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
