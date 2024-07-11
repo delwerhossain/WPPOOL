@@ -49,6 +49,25 @@ document.addEventListener("DOMContentLoaded", function () {
         : "0";
     });
   }
+  function toggleMenu1() {
+    const menu = document.getElementById("menu1");
+    const shareIcon = document.getElementById("share-icon1");
+    const menuIcon = document.getElementById("menu-icon1");
+
+    menuIcon.addEventListener("click", function () {
+      menu.classList.toggle("active");
+
+      menuIcon.src = menu.classList.contains("active")
+        ? "./asset/images/icon/close.svg"
+        : "./asset/images/icon/menu-black.svg";
+
+      shareIcon.classList.toggle("bg-custom-green");
+
+      menu.style.height = menu.classList.contains("active")
+        ? `${menu.scrollHeight}px`
+        : "0";
+    });
+  }
 
   // Handle scroll button
   function handleScrollButton() {
@@ -126,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize all functions
   initSwiper();
   toggleMenu();
+  toggleMenu1();
   handleScrollButton();
   handleResize();
 });
